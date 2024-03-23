@@ -9,3 +9,10 @@ class Binance(Exchange):
 
     def exchange_info(self):
         return self.any_request('exchangeInfo')
+
+    def get_trade_list(self, coin, limit=None):
+        params = {
+            'symbol': coin,
+            'limit': limit  # max - 1000
+        }
+        return self.any_request('trades', params=params)
