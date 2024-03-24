@@ -27,3 +27,7 @@ class Exchange:
     def get_trade_list(self, coin):
         """" Получаем список последних сделок """
         return self.any_request(method=None)
+
+    def ticker_24hr_price_change(self, symbol):
+        """" Получаем статистику изменения цен за 24 часа"""
+        pass
