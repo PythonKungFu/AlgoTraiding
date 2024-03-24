@@ -26,4 +26,8 @@ class Commex(Exchange):
         tickers_change = pool.map(self.ticker_24hr_price_change, tickers)
         return tickers_change
 
+    def get_symbol_price(self, symbol, rounding):
+        response = self.any_request('ticker/price', {'symbol': symbol})
+        return round(float(response['price']), rounding)
+
 
